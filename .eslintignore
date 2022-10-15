@@ -1,0 +1,9 @@
+*.css
+*.svg
+*.scss
+*.stories.tsx
+node_modules
+storybook-static
+.storybook
+.github
+dist
