@@ -31,6 +31,11 @@ const Template: Story = (args) => {
                 large={args.large}
                 small={args.small}
                 block={args.block}
+                tabIndex={args.tabIndex}
+                name={args.name}
+                type={args.type}
+                disabled={args.disabled}
+                autofocus={args.autofocus}
             />
         </Wrapper>
     );
@@ -122,4 +127,44 @@ Block.args = {
     color: "info",
     text: "Block Button",
     block: true,
+};
+
+export const TabIndex = Template.bind({});
+
+TabIndex.args = {
+    color: "primary",
+    text: "Tab Index",
+    tabIndex: 1,
+};
+
+export const Name = Template.bind({});
+
+Name.args = {
+    color: "primary",
+    text: "Name",
+    name: "subject",
+};
+
+export const Type = Template.bind({});
+
+Type.args = {
+    color: "primary",
+    text: "Type",
+    type: "submit",
+};
+
+export const Disabled = Template.bind({});
+
+Disabled.args = {
+    color: "primary",
+    text: "Disabled",
+    disabled: true,
+};
+
+export const AutoFocus = Template.bind({});
+
+AutoFocus.args = {
+    color: "primary",
+    text: "Auto Focus",
+    autofocus: true,
 };

@@ -1,7 +1,7 @@
 import React from "react";
 import { Story } from "@storybook/react";
 import Wrapper from "../../wrapper/Wrapper";
-import Column, { ColumnProps } from "../Column";
+import Column from "../Column";
 import Container from "../Column";
 import Row from "../../row/Row";
 
@@ -13,9 +13,22 @@ const colControl = {
 export default {
     title: "Components/Grid/Column",
     component: Column,
+    parameters: {
+        docs: {
+            description: {
+                component:
+                    "**Note:** `theme` is a global _Storybook_ `arg` for demo purposes and NOT a component prop.",
+            },
+        },
+    },
 };
 
-const Template: Story<ColumnProps> = (args) => {
+const Template: Story = (args) => {
+    React.useEffect(() => {
+        if (args.theme === "dark") {
+            document.documentElement.setAttribute("data-theme", "dark");
+        } else document.documentElement.setAttribute("data-theme", "light");
+    }, [args.theme]);
     return (
         <Wrapper>
             <Container>

@@ -1,11 +1,10 @@
 import * as React from "react";
 import { TThemeColors } from "../../styles/theme/colors";
-import Container from "../container/Container";
-import Wrapper from "../wrapper/Wrapper";
 import styles from "./Button.Styles";
 
 export interface ButtonProps {
     children?: React.ReactNode;
+    id?: string;
     text: string;
     color: TThemeColors;
     outline?: boolean;
@@ -22,6 +21,7 @@ export interface ButtonProps {
 
 const Button: React.FC<ButtonProps> = (props) => {
     const {
+        id,
         children,
         text,
         tabIndex,
@@ -33,7 +33,9 @@ const Button: React.FC<ButtonProps> = (props) => {
     } = props;
     return (
         <button
+            id={id}
             tabIndex={tabIndex ? tabIndex : 0}
+            name={name}
             aria-label={name ? name : text}
             type={type ? type : "button"}
             disabled={disabled ? true : false}

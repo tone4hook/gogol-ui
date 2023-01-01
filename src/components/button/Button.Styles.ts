@@ -4,7 +4,7 @@ import prefix from "../../styles/base/prefix";
 import { ButtonProps } from "./Button";
 
 const styles = (props: ButtonProps) => {
-    const { color, outline, large, small, block } = props;
+    const { color, outline, large, small, block, disabled } = props;
     return css`
         display: inline-block;
         ${block ? `width: 100%;` : ""}
@@ -49,6 +49,9 @@ const styles = (props: ButtonProps) => {
             background-color: var(--${prefix}${color}-dark);
             color: var(--${prefix}${color}-btn-text);
         }
+        ${disabled === true
+            ? `opacity:0.65;&:hover{border: 1px solid var(--${prefix}${color});color: var(--${prefix}${color}-btn-text);background-color: var(--${prefix}${color});}`
+            : ""}
     `;
 };
 
