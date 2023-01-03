@@ -36,10 +36,6 @@
         "url": "https://github.com/tone4hook/gogol-ui/issues"
     },
     "homepage": "https://github.com/tone4hook/gogol-ui#readme",
-    "peerDependencies": {
-        "react": "^17.0.0 || ^18.0.0",
-        "react-dom": "^17.0.0 || ^18.0.0"
-    },
     "devDependencies": {
         "@babel/core": "^7.19.0",
         "@emotion/babel-preset-css-prop": "^11.10.0",
