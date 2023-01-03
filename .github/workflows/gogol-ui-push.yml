@@ -9,6 +9,6 @@ jobs:
       with:
         node-version: 16.17.0
     - name: Install modules
-      run: npm ci
+      run: yarn
     - name: Run Prettier
-      run: npm run pretty
+      run: yarn pretty
