@@ -58,3 +58,6 @@ __snapshots__
 ######################
 dist/
 
+# Storybook static #
+storybook-static/
+
