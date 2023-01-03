@@ -8,7 +8,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Install modules
-      run: npm ci
+      run: npm install
     - name: Run Prettier
       run: npm run pretty
     - name: Run ESLint
