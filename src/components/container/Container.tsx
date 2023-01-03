@@ -1,4 +1,5 @@
 import * as React from "react";
+import type { EmotionJSX } from "@emotion/react/types/jsx-namespace";
 import styles from "./Container.Styles";
 
 export interface ContainerProps {
@@ -6,7 +7,7 @@ export interface ContainerProps {
     children?: React.ReactNode;
 }
 
-const Container: React.FC<ContainerProps> = (props) => {
+const Container: React.FC<ContainerProps> = (props): EmotionJSX.Element => {
     const { fluid, children } = props;
     return <div css={fluid ? styles.fluid : styles.container}>{children}</div>;
 };

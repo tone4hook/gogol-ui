@@ -1,4 +1,4 @@
-/* eslint-disable import/no-extraneous-dependencies */
+/* eslint-disable max-len */
 import { css } from "@emotion/react";
 import prefix from "./prefix";
 import { fontSizes, headingFontWeight } from "../theme/typography";

@@ -35,7 +35,6 @@ const Template: Story = (args) => {
                 name={args.name}
                 type={args.type}
                 disabled={args.disabled}
-                autofocus={args.autofocus}
             />
         </Wrapper>
     );
@@ -159,12 +158,4 @@ Disabled.args = {
     color: "primary",
     text: "Disabled",
     disabled: true,
-};
-
-export const AutoFocus = Template.bind({});
-
-AutoFocus.args = {
-    color: "primary",
-    text: "Auto Focus",
-    autofocus: true,
 };

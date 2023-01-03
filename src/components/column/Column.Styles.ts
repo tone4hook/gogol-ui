@@ -1,26 +1,25 @@
-/* eslint-disable import/no-extraneous-dependencies */
-import { css } from "@emotion/react";
+import { css, SerializedStyles } from "@emotion/react";
 import { mq } from "../../styles/utils/mediaQueries";
 import { spacing } from "../../styles/theme/units";
 import { ColumnProps } from "./Column";
 
 export const colBreakPointStyles = [
-    `flex: 0 0 auto; width: auto;`,
-    `flex: 0 0 auto; width: 8.33333333%;`,
-    `flex: 0 0 auto; width: 16.6666666667%;`,
-    `flex: 0 0 auto; width: 25%;`,
-    `flex: 0 0 auto; width: 33.33333333%;`,
-    `flex: 0 0 auto; width: 41.66666667%;`,
-    `flex: 0 0 auto; width: 50%;`,
-    `flex: 0 0 auto; width: 58.33333333%;`,
-    `flex: 0 0 auto; width: 66.66666667%;`,
-    `flex: 0 0 auto; width: 75%;`,
-    `flex: 0 0 auto; width: 83.33333333%;`,
-    `flex: 0 0 auto; width: 91.66666667%;`,
-    `flex: 0 0 auto; width: 100%;`,
+    "flex: 0 0 auto; width: auto;",
+    "flex: 0 0 auto; width: 8.33333333%;",
+    "flex: 0 0 auto; width: 16.6666666667%;",
+    "flex: 0 0 auto; width: 25%;",
+    "flex: 0 0 auto; width: 33.33333333%;",
+    "flex: 0 0 auto; width: 41.66666667%;",
+    "flex: 0 0 auto; width: 50%;",
+    "flex: 0 0 auto; width: 58.33333333%;",
+    "flex: 0 0 auto; width: 66.66666667%;",
+    "flex: 0 0 auto; width: 75%;",
+    "flex: 0 0 auto; width: 83.33333333%;",
+    "flex: 0 0 auto; width: 91.66666667%;",
+    "flex: 0 0 auto; width: 100%;",
 ];
 
-const styles = (props: ColumnProps) => css`
+const styles = (props: ColumnProps): SerializedStyles => css`
     box-sizing: border-box;
     flex-shrink: 0;
     width: 100%;

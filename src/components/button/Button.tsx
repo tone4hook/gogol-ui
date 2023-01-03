@@ -1,4 +1,5 @@
 import * as React from "react";
+import type { EmotionJSX } from "@emotion/react/types/jsx-namespace";
 import { TThemeColors } from "../../styles/theme/colors";
 import styles from "./Button.Styles";
 
@@ -19,27 +20,17 @@ export interface ButtonProps {
     onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
-const Button: React.FC<ButtonProps> = (props) => {
-    const {
-        id,
-        children,
-        text,
-        tabIndex,
-        name,
-        type,
-        disabled,
-        autofocus,
-        onClick,
-    } = props;
+const Button: React.FC<ButtonProps> = (props): EmotionJSX.Element => {
+    const { id, children, text, tabIndex, name, type, disabled, onClick } =
+        props;
     return (
         <button
             id={id}
-            tabIndex={tabIndex ? tabIndex : 0}
+            tabIndex={tabIndex || 0}
             name={name}
-            aria-label={name ? name : text}
-            type={type ? type : "button"}
-            disabled={disabled ? true : false}
-            autoFocus={autofocus ? true : false}
+            aria-label={name || text}
+            type={type}
+            disabled={!!disabled}
             css={styles(props)}
             onClick={onClick}
         >

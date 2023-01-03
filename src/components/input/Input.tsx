@@ -1,4 +1,5 @@
 import * as React from "react";
+import type { EmotionJSX } from "@emotion/react/types/jsx-namespace";
 import styles from "./Input.Styles";
 
 type TInputType =
@@ -17,7 +18,6 @@ export interface InputProps {
     placeholder?: string;
     pattern?: string;
     type?: TInputType;
-    autoFocus?: boolean;
     autoComplete?: "on" | "off";
     required?: boolean;
     disabled?: boolean;
@@ -27,14 +27,13 @@ export interface InputProps {
     onKeyDown?: (event: React.KeyboardEvent<HTMLInputElement>) => void;
 }
 
-const Input: React.FC<InputProps> = (props) => {
+const Input: React.FC<InputProps> = (props): EmotionJSX.Element => {
     const {
         id,
         value,
         placeholder,
         pattern,
         type,
-        autoFocus,
         autoComplete,
         required,
         disabled,
@@ -48,18 +47,17 @@ const Input: React.FC<InputProps> = (props) => {
             id={id}
             type={type}
             aria-label={type}
-            aria-required="true"
+            aria-required={required}
             placeholder={placeholder}
             pattern={pattern}
             value={value}
             name={name}
-            autoFocus={autoFocus}
             autoComplete={autoComplete}
             required={required}
-            disabled={disabled ? true : false}
-            css={styles(props)}
+            disabled={!!disabled}
+            css={styles()}
             onChange={onChange}
-            onKeyDown={onKeyDown ? onKeyDown : () => {}}
+            onKeyDown={onKeyDown}
         />
     );
 };
