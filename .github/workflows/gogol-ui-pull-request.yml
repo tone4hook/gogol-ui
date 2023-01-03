@@ -1,0 +1,17 @@
+name: Gogol UI PR Workflow
+on:
+  pull_request:
+    types: [opened, reopened]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install modules
+      run: npm ci
+    - name: Run Prettier
+      run: npm run pretty
+    - name: Run ESLint
+      run: npm run lint
+    - name: Run Tests
+      run: npm test
