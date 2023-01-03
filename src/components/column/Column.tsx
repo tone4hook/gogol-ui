@@ -1,4 +1,5 @@
 import * as React from "react";
+import type { EmotionJSX } from "@emotion/react/types/jsx-namespace";
 import styles from "./Column.Styles";
 
 export type TBreakPointValues =
@@ -25,7 +26,7 @@ export interface ColumnProps {
     children?: React.ReactNode;
 }
 
-const Container: React.FC<ColumnProps> = (props) => {
+const Container: React.FC<ColumnProps> = (props): EmotionJSX.Element => {
     const { children } = props;
     return <div css={styles(props)}>{children}</div>;
 };

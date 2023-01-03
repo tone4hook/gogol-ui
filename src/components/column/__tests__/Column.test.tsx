@@ -1,4 +1,3 @@
-import React from "react";
 import { render } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import { matchers } from "@emotion/jest";
@@ -32,6 +31,56 @@ const breakPoints: Array<keyof ITestColProps> = [
     "xxl",
 ];
 
+describe("Column component", () => {
+    it("should render Column with default styles", () => {
+        const { container } = render(
+            <Column>
+                <h1>Hello World</h1>
+            </Column>
+        );
+        expect(container.firstChild).toHaveStyle("box-sizing: border-box");
+        expect(container.firstChild).toHaveStyle("flex-shrink: 0");
+        expect(container.firstChild).toHaveStyle("width: 100%");
+        expect(container.firstChild).toHaveStyle("margin-top: 0");
+        expect(container.firstChild).toHaveStyle(
+            `padding-right: ${spacing.small};`
+        );
+        expect(container.firstChild).toHaveStyle(
+            `padding-left: ${spacing.small}`
+        );
+    });
+    it("should render Column breakpoint styles based on prop", () => {
+        breakPoints.forEach((item: keyof ITestColProps) => {
+            for (let i = 0; i < 12; i++) {
+                let propObj: ITestColProps = {
+                    [item]: breakPointValues[i],
+                };
+
+                const { container } = render(
+                    <Column {...propObj}>
+                        <h1>Hello World</h1>
+                    </Column>
+                );
+
+                let j = i + 1;
+
+                if (item !== "xs") {
+                    const expectedStyles = colBreakPointStyles[j].substring(
+                        colBreakPointStyles[j].indexOf("h") + 3
+                    );
+                    expect(container.firstChild).toHaveStyleRule(
+                        "width",
+                        expectedStyles.slice(0, -1),
+                        {
+                            media: mq(item).slice(7),
+                        }
+                    );
+                }
+            }
+        });
+    });
+});
+
 test("should render Column with default styles", () => {
     const { container } = render(
         <Column>
@@ -46,35 +95,4 @@ test("should render Column with default styles", () => {
         `padding-right: ${spacing.small};`
     );
     expect(container.firstChild).toHaveStyle(`padding-left: ${spacing.small}`);
-});
-
-test("should render Column breakpoint styles based on prop", () => {
-    breakPoints.forEach((item: keyof ITestColProps) => {
-        for (let i = 0; i < 12; i++) {
-            let propObj: ITestColProps = {
-                [item]: breakPointValues[i],
-            };
-
-            const { container } = render(
-                <Column {...propObj}>
-                    <h1>Hello World</h1>
-                </Column>
-            );
-
-            let j = i + 1;
-
-            if (item !== "xs") {
-                const expectedStyles = colBreakPointStyles[j].substring(
-                    colBreakPointStyles[j].indexOf("h") + 3
-                );
-                expect(container.firstChild).toHaveStyleRule(
-                    "width",
-                    expectedStyles.slice(0, -1),
-                    {
-                        media: mq(item).slice(7),
-                    }
-                );
-            }
-        }
-    });
 });

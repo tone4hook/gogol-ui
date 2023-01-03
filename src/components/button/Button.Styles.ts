@@ -1,22 +1,22 @@
-/* eslint-disable import/no-extraneous-dependencies */
-import { css } from "@emotion/react";
+/* eslint-disable max-len */
+import { css, SerializedStyles } from "@emotion/react";
 import prefix from "../../styles/base/prefix";
 import { ButtonProps } from "./Button";
 
-const styles = (props: ButtonProps) => {
-    const { color, outline, large, small, block } = props;
+const styles = (props: ButtonProps): SerializedStyles => {
+    const { color, outline, large, small, block, disabled } = props;
     return css`
         display: inline-block;
-        ${block ? `width: 100%;` : ""}
+        ${block ? "width: 100%;" : ""}
         padding: 0.5rem 1.5rem;
-        ${large ? `padding: 0.75rem 1.75rem;` : ""}
-        ${small ? `padding: 0.5rem 1.25rem;` : ""}
-        ${block ? `padding: 0.75rem 1.75rem;` : ""}
+        ${large ? "padding: 0.75rem 1.75rem;" : ""}
+        ${small ? "padding: 0.5rem 1.25rem;" : ""}
+        ${block ? "padding: 0.75rem 1.75rem;" : ""}
         font-family: var(--${prefix}body-font-family);
         font-size: 1rem;
-        ${large ? `font-size: 1.25rem;` : ""}
-        ${small ? `font-size: 0.75rem;` : ""}
-        ${block ? `font-size: 1.25rem;` : ""}
+        ${large ? "font-size: 1.25rem;" : ""}
+        ${small ? "font-size: 0.75rem;" : ""}
+        ${block ? "font-size: 1.25rem;" : ""}
         font-weight: 400;
         line-height: 1.5;
         color: var(--${prefix}${color}-btn-text);
@@ -49,6 +49,9 @@ const styles = (props: ButtonProps) => {
             background-color: var(--${prefix}${color}-dark);
             color: var(--${prefix}${color}-btn-text);
         }
+        ${disabled === true
+            ? `opacity:0.65;&:hover{border: 1px solid var(--${prefix}${color});color: var(--${prefix}${color}-btn-text);background-color: var(--${prefix}${color});}`
+            : ""}
     `;
 };
 

@@ -1,11 +1,10 @@
 import React from "react";
 import { Story } from "@storybook/react";
 import Wrapper from "../../wrapper/Wrapper";
-import Container from "../Container";
 
 export default {
-    title: "Components/Grid/Container",
-    component: Container,
+    title: "Components/Root/Wrapper",
+    component: Wrapper,
     parameters: {
         docs: {
             description: {
@@ -25,34 +24,25 @@ const Template: Story = (args) => {
 
     return (
         <Wrapper>
-            <Container {...args}>
-                <h1>I am a Container</h1>
-                <p>I can be default or fluid.</p>
-            </Container>
+            <h1>I am a Wrapper!</h1>
+            <p>
+                Use me at the <code>top level</code> of your app or part of the
+                app where you plan on using <code>Gogol UI</code> components.
+            </p>
+            <p>
+                Think of me as a <code>global wrapper</code> that has some{" "}
+                <code>root</code> and <code>reset</code> styles required for the
+                components to look as intended.
+            </p>
         </Wrapper>
     );
 };
 
 export const Default = Template.bind({});
 
-Default.args = {
-    fluid: false,
-};
+Default.args = {};
 
 Default.argTypes = {
-    fluid: {
-        options: [true, false],
-        control: { type: "inline-radio" },
-    },
-};
-
-export const Fluid = Template.bind({});
-
-Fluid.args = {
-    fluid: true,
-};
-
-Fluid.argTypes = {
     fluid: {
         options: [true, false],
         control: { type: "inline-radio" },

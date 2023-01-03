@@ -1,4 +1,4 @@
-# React Component Library
+# Gogol UI
 
 A React component library built with TypeScript.
 
@@ -13,7 +13,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 `git clone`
 
-`cd project-dir`
+`cd gogol-ui`
 
 `npm install`
 
@@ -37,8 +37,7 @@ Run `npm publish` to publish in this repo's Github Package.
 
 -   [React](https://reactjs.org/) - A JavaScript library for building user interfaces
 -   [TypeScript](https://www.typescriptlang.org/docs/home.html) - TypeScript is a typed superset of JavaScript that compiles to plain JavaScript.
--   [Bootstrap](https://getbootstrap.com/) - Bootstrap is an open source toolkit for developing with HTML, CSS, and JS.
--   [React Transition Group](https://reactcommunity.org/react-transition-group/) - Exposes simple components useful for defining entering and exiting transitions.
+-   [Emotion](https://emotion.sh/docs/introduction) - Emotion is a library designed for writing css styles with JavaScript.
 -   [Rollup.js](https://rollupjs.org/guide/en/) Rollup is a module bundler for JavaScript which compiles small pieces of code into something larger and more complex, such as a library or application.
 -   [Storybook.js](https://storybook.js.org/) Storybook is an open source tool for developing UI components in isolation for React, Vue, and Angular.
 

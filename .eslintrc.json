@@ -37,6 +37,7 @@
             }
         ],
         "no-shadow": "off",
+        "react/button-has-type": "off",
         "react/no-unused-prop-types": 0,
         "react/no-unknown-property": ["error", { "ignore": ["css"] }],
         "@typescript-eslint/no-shadow": ["error"],

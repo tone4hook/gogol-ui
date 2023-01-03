@@ -1,4 +1,4 @@
-/* eslint-disable import/no-extraneous-dependencies */
+/* eslint-disable max-len */
 import { css } from "@emotion/react";
 import prefix from "./prefix";
 import colors from "../theme/colors";
@@ -104,6 +104,9 @@ const styles = css`
         --${prefix}danger-btn-text: ${colors.lightMode.white};
         --${prefix}light-btn-text: ${colors.lightMode.black};
         --${prefix}dark-btn-text: ${colors.lightMode.white};
+        --${prefix}input-color: ${colors.lightMode.gray900};
+        --${prefix}input-border-color: ${colors.lightMode.gray400};
+        --${prefix}input-outline-color: rgba(${colors.lightMode.infoRgb}, 0.30);
     }
     [data-theme="dark"] {
         --${prefix}blue: ${colors.darkMode.blue};
@@ -171,6 +174,9 @@ const styles = css`
         --${prefix}link-color: ${colors.darkMode.success};
         --${prefix}code-color: ${colors.darkMode.pink};
         --${prefix}light-btn-text: ${colors.lightMode.white};
+        --${prefix}input-color: ${colors.darkMode.dark};
+        --${prefix}input-border-color: ${colors.darkMode.gray900};
+        --${prefix}input-outline-color: rgba(${colors.darkMode.infoRgb}, 0.85);
         }
 `;
 
