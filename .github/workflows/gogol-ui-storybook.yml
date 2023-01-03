@@ -11,6 +11,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - id: build-publish
+    - uses: actions/setup-node@v3
+      with:
+        node-version: 16.17.0
       uses: bitovi/github-actions-react-to-ghp@v1.2.0
       with:
         path: storybook-static
